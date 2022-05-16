@@ -23,6 +23,8 @@ def rabin_miller(p, ilosc_prob=25):
 
 
 def generuj_pierwsze(dlugosc, ilosc_prob=25):  # dlugosc czyli oczekiwana dlugosc liczby wyniokwej
+    if dlugosc // 2 - 4 <= 0:
+        raise ValueError("Too small dlugosc. Dlugosc must be greater than 12.")
     return [generuj_pierwsza(dlugosc // 2 - 1, ilosc_prob), generuj_pierwsza(dlugosc // 2 + 1, ilosc_prob)]
 
 
